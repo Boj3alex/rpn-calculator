@@ -1,6 +1,6 @@
 import argparse
 
-parser = argparse.ArgumentParser(description="Retrieve expression to evaluate")
+parser = argparse.ArgumentParser(description="RPN expression calculator - options")
 parser.add_argument('--expr', help='Type the RPN expression for evaluation inside quotes', required=False)
 
 args = parser.parse_args()
