@@ -1,3 +1,11 @@
+import argparse
+
+parser = argparse.ArgumentParser(description="Retrieve expression to evaluate")
+parser.add_argument('--expr', help='Type the RPN expression for evaluation inside quotes', required=False)
+
+args = parser.parse_args()
+
+
 def do_operation(element1, element2, operator):
     if operator == '+':
         return element1 + element2
@@ -29,7 +37,4 @@ def rpn_evaluation(rpn_exp):
 
 
 if __name__ == '__main__':
-    print('Type the RPN expression that you want to evaluate:')
-    rpn_exp = input()
-
-    print('The result of the RPN expression is:', rpn_evaluation(rpn_exp))
+    print('The result of the RPN expression is:', rpn_evaluation(args.expr))
